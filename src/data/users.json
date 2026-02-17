@@ -1,0 +1,158 @@
+[
+  {
+    "id": "u1",
+    "name": "John Smith",
+    "email": "john@acmecorp.com",
+    "company": "Acme Corporation",
+    "role": "customer",
+    "phone": "(555) 111-2222",
+    "avatar": null,
+    "createdAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": "u2",
+    "name": "Mike Johnson",
+    "email": "mike@fasthaulllc.com",
+    "company": "FastHaul LLC",
+    "role": "carrier",
+    "phone": "(555) 222-3333",
+    "carrierId": "c1",
+    "avatar": null,
+    "createdAt": "2024-02-20T14:00:00Z"
+  },
+  {
+    "id": "u3",
+    "name": "Sarah Williams",
+    "email": "sarah@freightcommand.com",
+    "company": "FreightCommand",
+    "role": "dispatch",
+    "phone": "(555) 333-4444",
+    "avatar": null,
+    "createdAt": "2023-06-10T09:00:00Z"
+  },
+  {
+    "id": "u4",
+    "name": "Admin User",
+    "email": "admin@freightcommand.com",
+    "company": "FreightCommand",
+    "role": "admin",
+    "phone": "(555) 444-5555",
+    "avatar": null,
+    "createdAt": "2023-01-01T00:00:00Z"
+  },
+  {
+    "id": "u5",
+    "name": "Robert Chen",
+    "email": "robert@pacificsteel.com",
+    "company": "Pacific Steel Works",
+    "role": "customer",
+    "phone": "(555) 555-6666",
+    "avatar": null,
+    "createdAt": "2024-03-05T11:00:00Z"
+  },
+  {
+    "id": "u6",
+    "name": "Maria Garcia",
+    "email": "maria@gulfcoastmfg.com",
+    "company": "Gulf Coast Manufacturing",
+    "role": "customer",
+    "phone": "(555) 666-7777",
+    "avatar": null,
+    "createdAt": "2024-04-12T15:00:00Z"
+  },
+  {
+    "id": "u7",
+    "name": "David Lee",
+    "email": "david@mountainelec.com",
+    "company": "Mountain Electronics",
+    "role": "customer",
+    "phone": "(555) 777-8888",
+    "avatar": null,
+    "createdAt": "2024-05-20T08:00:00Z"
+  },
+  {
+    "id": "u8",
+    "name": "Jennifer Adams",
+    "email": "jennifer@medsupply.com",
+    "company": "MedSupply Inc",
+    "role": "customer",
+    "phone": "(555) 888-9999",
+    "avatar": null,
+    "createdAt": "2024-02-28T13:00:00Z"
+  },
+  {
+    "id": "u9",
+    "name": "Tom Wilson",
+    "email": "tom@midwestexpress.com",
+    "company": "Midwest Express Trucking",
+    "role": "carrier",
+    "phone": "(555) 999-0000",
+    "carrierId": "c2",
+    "avatar": null,
+    "createdAt": "2024-01-10T10:00:00Z"
+  },
+  {
+    "id": "u10",
+    "name": "Lisa Brown",
+    "email": "lisa@southernfreight.com",
+    "company": "Southern Freight Lines",
+    "role": "carrier",
+    "phone": "(555) 000-1111",
+    "carrierId": "c3",
+    "avatar": null,
+    "createdAt": "2024-03-15T12:00:00Z"
+  },
+  {
+    "id": "u11",
+    "name": "James Martinez",
+    "email": "james@deserthaulers.com",
+    "company": "Desert Haulers Inc",
+    "role": "carrier",
+    "phone": "(555) 112-2334",
+    "carrierId": "c4",
+    "avatar": null,
+    "createdAt": "2024-04-22T09:00:00Z"
+  },
+  {
+    "id": "u12",
+    "name": "Emily Thompson",
+    "email": "emily@freightcommand.com",
+    "company": "FreightCommand",
+    "role": "dispatch",
+    "phone": "(555) 223-3445",
+    "avatar": null,
+    "createdAt": "2024-01-05T08:00:00Z"
+  },
+  {
+    "id": "u13",
+    "name": "Chris Anderson",
+    "email": "chris@actransport.com",
+    "company": "Atlantic Coast Transport",
+    "role": "carrier",
+    "phone": "(555) 334-4556",
+    "carrierId": "c5",
+    "avatar": null,
+    "createdAt": "2024-02-14T11:00:00Z"
+  },
+  {
+    "id": "u14",
+    "name": "Amanda White",
+    "email": "amanda@freightcommand.com",
+    "company": "FreightCommand",
+    "role": "dispatch",
+    "phone": "(555) 445-5667",
+    "avatar": null,
+    "createdAt": "2024-05-01T14:00:00Z"
+  },
+  {
+    "id": "u15",
+    "name": "Kevin Davis",
+    "email": "kevin@lonestartrucking.com",
+    "company": "Lone Star Trucking",
+    "role": "carrier",
+    "phone": "(555) 556-6778",
+    "carrierId": "c9",
+    "avatar": null,
+    "createdAt": "2024-03-28T16:00:00Z"
+  }
+]

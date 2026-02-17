@@ -1,0 +1,268 @@
+[
+  {
+    "loadId": "SH-4812",
+    "history": [
+      {
+        "timestamp": "2026-02-17T05:00:00Z",
+        "location": "Phoenix, AZ",
+        "coords": [33.4484, -112.0740],
+        "status": "Picked up at origin",
+        "note": "Loaded and departed"
+      },
+      {
+        "timestamp": "2026-02-17T06:30:00Z",
+        "location": "Wickenburg, AZ",
+        "coords": [33.9687, -112.7296],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-17T08:00:00Z",
+        "location": "Kingman, AZ",
+        "coords": [35.1894, -114.0530],
+        "status": "In transit",
+        "note": "Fuel stop"
+      },
+      {
+        "timestamp": "2026-02-17T09:30:00Z",
+        "location": "Kingman, AZ",
+        "coords": [35.1894, -114.0530],
+        "status": "In transit",
+        "note": "Departed fuel stop"
+      }
+    ]
+  },
+  {
+    "loadId": "SH-4811",
+    "history": [
+      {
+        "timestamp": "2026-02-17T07:00:00Z",
+        "location": "Kansas City, MO",
+        "coords": [39.0997, -94.5786],
+        "status": "Picked up at origin",
+        "note": "Loaded and departed"
+      },
+      {
+        "timestamp": "2026-02-17T08:30:00Z",
+        "location": "Ottawa, KS",
+        "coords": [38.6156, -95.2679],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-17T10:00:00Z",
+        "location": "Emporia, KS",
+        "coords": [38.4039, -96.1817],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-17T11:30:00Z",
+        "location": "Wichita, KS",
+        "coords": [37.6872, -97.3301],
+        "status": "In transit",
+        "note": "Brief stop"
+      }
+    ]
+  },
+  {
+    "loadId": "SH-4810",
+    "history": [
+      {
+        "timestamp": "2026-02-17T08:00:00Z",
+        "location": "Nashville, TN",
+        "coords": [36.1627, -86.7816],
+        "status": "Picked up at origin",
+        "note": "Loaded - fragile music equipment"
+      },
+      {
+        "timestamp": "2026-02-17T09:15:00Z",
+        "location": "Murfreesboro, TN",
+        "coords": [35.8456, -86.3903],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-17T10:30:00Z",
+        "location": "Manchester, TN",
+        "coords": [35.4817, -86.0886],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-17T11:45:00Z",
+        "location": "Chattanooga, TN",
+        "coords": [35.0456, -85.3097],
+        "status": "In transit",
+        "note": "Rest stop"
+      }
+    ]
+  },
+  {
+    "loadId": "SH-4807",
+    "history": [
+      {
+        "timestamp": "2026-02-17T13:00:00Z",
+        "location": "Memphis, TN",
+        "coords": [35.1495, -90.0490],
+        "status": "Picked up at origin",
+        "note": "Loaded and departed"
+      },
+      {
+        "timestamp": "2026-02-17T14:15:00Z",
+        "location": "Blytheville, AR",
+        "coords": [35.9273, -89.9187],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-17T15:30:00Z",
+        "location": "Sikeston, MO",
+        "coords": [36.8767, -89.5879],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-17T16:45:00Z",
+        "location": "Cape Girardeau, MO",
+        "coords": [37.3059, -89.5181],
+        "status": "In transit",
+        "note": "GPS update"
+      }
+    ]
+  },
+  {
+    "loadId": "SH-4802",
+    "history": [
+      {
+        "timestamp": "2026-02-17T11:00:00Z",
+        "location": "Sacramento, CA",
+        "coords": [38.5816, -121.4944],
+        "status": "Picked up at origin",
+        "note": "Reefer verified at 0F"
+      },
+      {
+        "timestamp": "2026-02-17T11:45:00Z",
+        "location": "Elk Grove, CA",
+        "coords": [38.4088, -121.3716],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-17T12:30:00Z",
+        "location": "Lodi, CA",
+        "coords": [38.1341, -121.2722],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-17T13:15:00Z",
+        "location": "Stockton, CA",
+        "coords": [37.9577, -121.2908],
+        "status": "In transit",
+        "note": "Temp check - 0F confirmed"
+      }
+    ]
+  },
+  {
+    "loadId": "SH-4815",
+    "history": [
+      {
+        "timestamp": "2026-02-15T06:00:00Z",
+        "location": "New York, NY",
+        "coords": [40.7128, -74.0060],
+        "status": "Picked up at origin",
+        "note": "Loaded pharmaceutical supplies"
+      },
+      {
+        "timestamp": "2026-02-15T07:30:00Z",
+        "location": "Stamford, CT",
+        "coords": [41.0534, -73.5387],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-15T09:00:00Z",
+        "location": "New Haven, CT",
+        "coords": [41.3083, -72.9279],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-15T10:30:00Z",
+        "location": "Hartford, CT",
+        "coords": [41.7658, -72.6734],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-15T12:00:00Z",
+        "location": "Springfield, MA",
+        "coords": [42.1015, -72.5898],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-15T13:45:00Z",
+        "location": "Boston, MA",
+        "coords": [42.3601, -71.0589],
+        "status": "Delivered",
+        "note": "Delivered - BOL signed"
+      }
+    ]
+  },
+  {
+    "loadId": "SH-4800",
+    "history": [
+      {
+        "timestamp": "2026-02-16T07:00:00Z",
+        "location": "Omaha, NE",
+        "coords": [41.2565, -95.9345],
+        "status": "Picked up at origin",
+        "note": "Loaded agricultural products"
+      },
+      {
+        "timestamp": "2026-02-16T09:00:00Z",
+        "location": "Grand Island, NE",
+        "coords": [40.9264, -98.3420],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-16T11:00:00Z",
+        "location": "North Platte, NE",
+        "coords": [41.1403, -100.7601],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-16T13:00:00Z",
+        "location": "Sidney, NE",
+        "coords": [41.1427, -102.9779],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-16T15:00:00Z",
+        "location": "Sterling, CO",
+        "coords": [40.6255, -103.2077],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-16T17:00:00Z",
+        "location": "Fort Morgan, CO",
+        "coords": [40.2503, -103.8000],
+        "status": "In transit",
+        "note": "GPS update"
+      },
+      {
+        "timestamp": "2026-02-16T18:45:00Z",
+        "location": "Denver, CO",
+        "coords": [39.7392, -104.9903],
+        "status": "Delivered",
+        "note": "Delivered - all items confirmed"
+      }
+    ]
+  }
+]
