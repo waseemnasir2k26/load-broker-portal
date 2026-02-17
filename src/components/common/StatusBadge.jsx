@@ -1,33 +1,49 @@
-import { getStatusColor } from '../../utils/formatters'
+import { getStatusColor, getStatusIcon } from '../../utils/formatters'
 
+// GAP 4: Updated status labels including picked_up and closed
 const statusLabels = {
   posted: 'Posted',
   bidding: 'Bidding',
   assigned: 'Assigned',
-  'in-transit': 'In Transit',
+  picked_up: 'Picked Up',
+  in_transit: 'In Transit',
+  'in-transit': 'In Transit', // Legacy support
   delivered: 'Delivered',
+  closed: 'Closed',
   cancelled: 'Cancelled',
   pending: 'Pending',
   accepted: 'Accepted',
   rejected: 'Rejected'
 }
 
-export default function StatusBadge({ status, pulse = false, size = 'sm' }) {
+export default function StatusBadge({ status, pulse = false, size = 'sm', showIcon = false }) {
   const colorClasses = getStatusColor(status)
+  const icon = showIcon ? getStatusIcon(status) : null
   const sizeClasses = size === 'lg' ? 'px-3 py-1.5 text-sm' : 'px-2 py-0.5 text-xs'
+
+  // Normalize status for comparison
+  const normalizedStatus = status?.replace('-', '_')
+  const isInTransit = normalizedStatus === 'in_transit'
+  const isPickedUp = normalizedStatus === 'picked_up'
 
   return (
     <span
       className={`
         inline-flex items-center font-medium rounded-full border
         ${colorClasses} ${sizeClasses}
-        ${pulse && status === 'in-transit' ? 'status-pulse' : ''}
+        ${pulse && (isInTransit || isPickedUp) ? 'status-pulse' : ''}
       `}
     >
-      {status === 'in-transit' && (
-        <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-1.5 animate-pulse" />
+      {showIcon && icon && (
+        <span className="mr-1.5">{icon}</span>
       )}
-      {statusLabels[status] || status}
+      {isInTransit && !showIcon && (
+        <span className="w-1.5 h-1.5 bg-[#FA9B00] rounded-full mr-1.5 animate-pulse" />
+      )}
+      {isPickedUp && !showIcon && (
+        <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full mr-1.5 animate-pulse" />
+      )}
+      {statusLabels[status] || statusLabels[normalizedStatus] || status}
     </span>
   )
 }

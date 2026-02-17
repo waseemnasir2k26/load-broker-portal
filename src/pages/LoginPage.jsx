@@ -1,23 +1,28 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Truck, Mail, Lock, Eye, EyeOff, Users, Zap, ChevronRight } from 'lucide-react'
+import { Mail, Lock, Eye, EyeOff, Zap, ChevronRight } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { demoAccounts } from '../data/demoAccounts'
+import A7Logo from '../components/common/A7Logo'
 import logger from '../utils/logger'
 
 function DemoAccountCard({ account, onSelect, isSelected }) {
   const badgeClasses = {
+    orange: 'bg-[#FA9B00]/20 text-[#FA9B00] border-[#FA9B00]/30',
     emerald: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
     amber: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
     purple: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
-    blue: 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+    blue: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
+    indigo: 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30'
   }
 
   const iconBgClasses = {
+    orange: 'bg-[#FA9B00]/10',
     emerald: 'bg-emerald-500/10',
     amber: 'bg-amber-500/10',
     purple: 'bg-purple-500/10',
-    blue: 'bg-blue-500/10'
+    blue: 'bg-blue-500/10',
+    indigo: 'bg-indigo-500/10'
   }
 
   return (
@@ -27,25 +32,25 @@ function DemoAccountCard({ account, onSelect, isSelected }) {
       className={`w-full p-3 rounded-xl border text-left transition-all duration-200
         ${isSelected
           ? `${badgeClasses[account.badgeColor]} border-2`
-          : 'bg-bg-tertiary border-border hover:border-text-muted'
+          : 'bg-bg-tertiary border-border hover:border-[#FA9B00]/50'
         }`}
     >
       <div className="flex items-center gap-3">
-        <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${iconBgClasses[account.badgeColor]}`}>
-          <Users className={`w-5 h-5 ${badgeClasses[account.badgeColor].split(' ')[1]}`} />
+        <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-xl ${iconBgClasses[account.badgeColor]}`}>
+          {account.icon}
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
             <span className="text-sm font-medium text-text-primary truncate">
               {account.name}
             </span>
-            <span className={`text-xs px-1.5 py-0.5 rounded ${badgeClasses[account.badgeColor]}`}>
+            <span className={`text-xs px-1.5 py-0.5 rounded border ${badgeClasses[account.badgeColor]}`}>
               {account.badge}
             </span>
           </div>
           <p className="text-xs text-text-muted truncate">{account.description}</p>
         </div>
-        <ChevronRight className={`w-4 h-4 flex-shrink-0 transition-transform ${isSelected ? 'text-accent-primary rotate-90' : 'text-text-muted'}`} />
+        <ChevronRight className={`w-4 h-4 flex-shrink-0 transition-transform ${isSelected ? 'text-[#FA9B00] rotate-90' : 'text-text-muted'}`} />
       </div>
     </button>
   )
@@ -59,7 +64,7 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [selectedAccount, setSelectedAccount] = useState(null)
-  const [activeTab, setActiveTab] = useState('demo') // 'demo' or 'manual'
+  const [activeTab, setActiveTab] = useState('demo')
 
   const handleDemoLogin = (account) => {
     setSelectedAccount(account)
@@ -78,13 +83,9 @@ export default function LoginPage() {
     })
 
     setTimeout(() => {
-      // Enable demo mode flag
       localStorage.setItem('lbp_demo_mode', 'true')
-
-      // Login with email
       login(email, password)
 
-      // If a demo account was selected, switch to that role
       if (selectedAccount) {
         switchRole(selectedAccount.role)
         logger.auth('Logged in as demo account', { role: selectedAccount.role })
@@ -111,22 +112,21 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-bg-primary flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Background Effects */}
+      {/* Background Effects - A7 Orange */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-purple/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FA9B00]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
       </div>
 
       {/* Login Card */}
       <div className="w-full max-w-md relative z-10 animate-fade-up">
         <div className="bg-bg-secondary border border-border rounded-2xl p-8 shadow-xl">
-          {/* Logo */}
+          {/* A7 Transport Logo */}
           <div className="text-center mb-6">
-            <div className="inline-flex items-center justify-center p-4 bg-accent-primary/10 rounded-2xl mb-4">
-              <Truck className="w-10 h-10 text-accent-primary" />
+            <div className="flex justify-center mb-4">
+              <A7Logo size="lg" showTagline={false} />
             </div>
-            <h1 className="text-2xl font-bold text-text-primary font-heading">FreightCommand</h1>
-            <p className="text-text-secondary mt-2">Load Broker Portal</p>
+            <p className="text-text-secondary mt-2">Load Board & Tracking Portal</p>
           </div>
 
           {/* Tab Toggle */}
@@ -136,7 +136,7 @@ export default function LoginPage() {
               onClick={() => setActiveTab('demo')}
               className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all
                 ${activeTab === 'demo'
-                  ? 'bg-accent-primary text-white'
+                  ? 'bg-[#FA9B00] text-white'
                   : 'text-text-secondary hover:text-text-primary'
                 }`}
             >
@@ -147,7 +147,7 @@ export default function LoginPage() {
               onClick={() => setActiveTab('manual')}
               className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all
                 ${activeTab === 'manual'
-                  ? 'bg-accent-primary text-white'
+                  ? 'bg-[#FA9B00] text-white'
                   : 'text-text-secondary hover:text-text-primary'
                 }`}
             >
@@ -157,10 +157,10 @@ export default function LoginPage() {
 
           {activeTab === 'demo' ? (
             <>
-              {/* Demo Account Selection */}
-              <div className="space-y-2 mb-6">
+              {/* Demo Account Selection - All 6 accounts */}
+              <div className="space-y-2 mb-6 max-h-[400px] overflow-y-auto pr-1">
                 <p className="text-xs text-text-muted mb-3 flex items-center gap-1">
-                  <Zap className="w-3 h-3" />
+                  <Zap className="w-3 h-3 text-[#FA9B00]" />
                   Click any account to login instantly
                 </p>
                 {demoAccounts.map((account) => (
@@ -173,10 +173,10 @@ export default function LoginPage() {
                 ))}
               </div>
 
-              {/* Loading State for Quick Start */}
+              {/* Loading State */}
               {loading && (
                 <div className="flex items-center justify-center py-4">
-                  <svg className="animate-spin h-6 w-6 text-accent-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <svg className="animate-spin h-6 w-6 text-[#FA9B00]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
@@ -198,7 +198,7 @@ export default function LoginPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@company.com"
-                    className="w-full pl-12 pr-4 py-3 bg-bg-tertiary border border-border rounded-xl text-text-primary placeholder:text-text-muted focus:border-accent-primary transition-colors"
+                    className="w-full pl-12 pr-4 py-3 bg-bg-tertiary border border-border rounded-xl text-text-primary placeholder:text-text-muted focus:border-[#FA9B00] transition-colors"
                   />
                 </div>
               </div>
@@ -214,7 +214,7 @@ export default function LoginPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter your password"
-                    className="w-full pl-12 pr-12 py-3 bg-bg-tertiary border border-border rounded-xl text-text-primary placeholder:text-text-muted focus:border-accent-primary transition-colors"
+                    className="w-full pl-12 pr-12 py-3 bg-bg-tertiary border border-border rounded-xl text-text-primary placeholder:text-text-muted focus:border-[#FA9B00] transition-colors"
                   />
                   <button
                     type="button"
@@ -229,7 +229,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3.5 bg-accent-primary text-white rounded-xl font-semibold hover:bg-accent-primary/90 disabled:opacity-50 transition-all btn-primary"
+                className="w-full py-3.5 bg-[#FA9B00] hover:bg-[#E08A00] text-white rounded-xl font-semibold disabled:opacity-50 transition-all"
               >
                 {loading ? (
                   <span className="flex items-center justify-center">
@@ -245,9 +245,9 @@ export default function LoginPage() {
               </button>
 
               {/* Demo Notice */}
-              <div className="p-4 bg-accent-primary/10 border border-accent-primary/20 rounded-xl">
+              <div className="p-4 bg-[#FA9B00]/10 border border-[#FA9B00]/20 rounded-xl">
                 <p className="text-sm text-text-secondary text-center">
-                  <span className="text-accent-primary font-semibold">Demo Mode:</span> Enter any email and password to sign in.
+                  <span className="text-[#FA9B00] font-semibold">Demo Mode:</span> Enter any email and password to sign in.
                 </p>
               </div>
             </form>
@@ -256,7 +256,7 @@ export default function LoginPage() {
 
         {/* Footer */}
         <p className="text-center text-text-muted text-sm mt-6">
-          FreightCommand Load Broker Portal
+          A7 Transport - Freight Brokerage Portal
         </p>
       </div>
     </div>

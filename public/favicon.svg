@@ -1,7 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <rect width="100" height="100" rx="20" fill="#0A0E17"/>
-  <path d="M20 65 L35 35 L50 50 L65 25 L80 55" stroke="#3B82F6" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="35" cy="65" r="8" fill="#3B82F6"/>
-  <circle cx="65" cy="65" r="8" fill="#3B82F6"/>
-  <rect x="25" y="55" width="50" height="15" rx="3" fill="#1E293B"/>
+  <!-- A7 Logo Mark -->
+  <text x="12" y="72" font-family="Arial Black, sans-serif" font-size="55" font-weight="900" fill="#FA9B00">A</text>
+  <text x="52" y="72" font-family="Arial Black, sans-serif" font-size="55" font-weight="900" fill="#FFFFFF">7</text>
+  <!-- Orange swoosh accent -->
+  <path d="M15 25 Q50 10 85 25" stroke="#FA9B00" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.8"/>
 </svg>

@@ -19,8 +19,10 @@ const filters = [
       { value: 'posted', label: 'Posted' },
       { value: 'bidding', label: 'Bidding' },
       { value: 'assigned', label: 'Assigned' },
-      { value: 'in-transit', label: 'In Transit' },
-      { value: 'delivered', label: 'Delivered' }
+      { value: 'picked_up', label: 'Picked Up' },
+      { value: 'in_transit', label: 'In Transit' },
+      { value: 'delivered', label: 'Delivered' },
+      { value: 'closed', label: 'Closed' }
     ]
   },
   {
@@ -48,7 +50,7 @@ export default function LoadBoard() {
   })
   const [showPostModal, setShowPostModal] = useState(searchParams.get('action') === 'new')
 
-  const canPostLoads = ['customer', 'dispatch', 'admin'].includes(currentRole)
+  const canPostLoads = ['customer', 'dispatch', 'admin', 'superadmin'].includes(currentRole)
 
   const filteredLoads = useMemo(() => {
     return loads.filter(load => {
@@ -57,7 +59,9 @@ export default function LoadBoard() {
           !load.destination.toLowerCase().includes(searchQuery.toLowerCase())) {
         return false
       }
-      if (activeFilters.status !== 'all' && load.status !== activeFilters.status) {
+      // Normalize status to snake_case for comparison
+      const normalizedStatus = load.status?.replace('-', '_')
+      if (activeFilters.status !== 'all' && normalizedStatus !== activeFilters.status) {
         return false
       }
       if (activeFilters.equipmentType !== 'all' && load.equipmentType !== activeFilters.equipmentType) {

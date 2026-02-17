@@ -2,21 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== A7 TRANSPORT COLOR SCHEME ===== */
+/* Brand Colors: Orange #FA9B00, Dark Charcoal #2D3137 */
+
 :root {
+  /* Dark theme (default) */
   --bg-primary: #0A0E17;
   --bg-secondary: #111827;
   --bg-tertiary: #1E293B;
   --bg-hover: #263248;
-  --border: #1E3A5F;
-  --accent-primary: #3B82F6;
+  --border: #2D3137;
+
+  /* A7 Transport Orange Accent */
+  --accent-primary: #FA9B00;
+  --accent-primary-hover: #E08A00;
+  --accent-primary-glow: rgba(250, 155, 0, 0.15);
+
+  /* Status colors (universal) */
   --accent-success: #10B981;
   --accent-warning: #F59E0B;
   --accent-danger: #EF4444;
   --accent-purple: #8B5CF6;
+  --accent-cyan: #06B6D4;
+
+  /* Text */
   --text-primary: #F1F5F9;
   --text-secondary: #94A3B8;
   --text-muted: #475569;
-  --glow-blue: rgba(59,130,246,0.15);
+
+  /* Glow effect */
+  --glow-primary: rgba(250, 155, 0, 0.15);
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F1F5F9;
+  --bg-hover: #E2E8F0;
+  --border: #E2E8F0;
+
+  --accent-primary: #FA9B00;
+  --accent-primary-hover: #E08A00;
+  --accent-primary-glow: rgba(250, 155, 0, 0.1);
+
+  --text-primary: #1E293B;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+
+  --glow-primary: rgba(250, 155, 0, 0.1);
 }
 
 * {
@@ -50,6 +84,8 @@ html, body, #root {
   background: var(--bg-hover);
 }
 
+/* ===== ANIMATIONS ===== */
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -61,8 +97,13 @@ html, body, #root {
 }
 
 @keyframes statusPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
-  50% { box-shadow: 0 0 0 8px rgba(245, 158, 11, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(250, 155, 0, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(250, 155, 0, 0); }
+}
+
+@keyframes driverPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
 }
 
 .animate-fade-up {
@@ -94,15 +135,22 @@ html, body, #root {
   animation: statusPulse 2s infinite;
 }
 
+.driver-pulse {
+  animation: driverPulse 1.5s infinite;
+}
+
+/* ===== COMPONENT STYLES ===== */
+
 .glow-card {
   transition: all 0.3s ease;
 }
 
 .glow-card:hover {
-  box-shadow: 0 0 20px var(--glow-blue);
+  box-shadow: 0 0 20px var(--glow-primary);
   border-color: var(--accent-primary);
 }
 
+/* Leaflet Map Styling */
 .leaflet-container {
   background: var(--bg-primary) !important;
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -133,24 +181,29 @@ html, body, #root {
   background: var(--bg-secondary) !important;
 }
 
+/* Form Elements */
 input:focus, textarea:focus, select:focus {
   outline: none;
   border-color: var(--accent-primary) !important;
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 0 2px var(--accent-primary-glow);
 }
 
+/* Buttons */
 .btn-primary {
+  background-color: var(--accent-primary);
   transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+  background-color: var(--accent-primary-hover);
+  box-shadow: 0 0 15px var(--accent-primary-glow);
 }
 
 .table-row:hover {
   background: var(--bg-hover);
 }
 
+/* Typography */
 .font-data {
   font-family: 'JetBrains Mono', monospace;
 }
@@ -160,4 +213,35 @@ input:focus, textarea:focus, select:focus {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* A7 Transport Orange Gradient */
+.gradient-text-a7 {
+  background: linear-gradient(135deg, #FA9B00, #FFB84D);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Notification Badge */
+.notification-badge {
+  background-color: var(--accent-danger);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+/* Unread indicator */
+.unread-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-primary);
+  border-radius: 50%;
 }

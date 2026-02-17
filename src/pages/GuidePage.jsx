@@ -12,11 +12,11 @@ const guideCategories = [
     id: 'getting-started',
     title: 'Getting Started',
     icon: PlayCircle,
-    color: 'blue',
+    color: 'orange',
     sections: [
       {
-        title: 'Welcome to Load Broker Portal',
-        content: `Load Broker Portal is a comprehensive freight management platform designed for shippers, carriers, and dispatchers.
+        title: 'Welcome to A7 Transport Portal',
+        content: `A7 Transport Portal is a comprehensive freight brokerage platform designed for Ilya Prokhnevski's A7 Transport business.
 
 This demo environment showcases all platform features with simulated data. Feel free to explore, click around, and test any functionality.
 
@@ -24,21 +24,26 @@ Key capabilities:
 • Post and manage freight loads
 • Real-time shipment tracking with GPS
 • Carrier bidding and selection
+• Driver assignment and status updates
 • Performance analytics and scoring
 • Secure messaging between parties
-• Contract generation and management`
+• Contract generation with A7 branding`
       },
       {
-        title: 'Choosing Your Demo Role',
-        content: `The platform offers four distinct user roles, each with different permissions and views:
+        title: 'Understanding User Roles',
+        content: `The platform offers six distinct user roles, each with different permissions and views:
+
+**Super Admin (Ilya)** - Full owner access including all features, analytics, and system settings.
 
 **Admin** - Full platform access including user management, system settings, and analytics dashboards.
 
 **Dispatch** - Operations role for posting loads, coordinating with carriers, and managing active shipments.
 
-**Carrier** - Transportation provider view for browsing loads, submitting bids, and tracking deliveries.
+**Carrier** - Transportation provider view for browsing loads, submitting bids, assigning drivers, and tracking deliveries.
 
 **Customer/Shipper** - Freight owner perspective for requesting shipments and tracking cargo.
+
+**Driver** - Mobile-friendly view for assigned loads, status updates (Picked Up/Delivered), and GPS tracking.
 
 Use the role switcher in the top navigation bar to instantly switch between perspectives.`
       },
@@ -95,13 +100,15 @@ Dispatchers will review bids and select the best carrier based on price, score, 
         title: 'Understanding Load Statuses',
         content: `Loads progress through several stages:
 
-🟡 **Posted** - New load, accepting bids
-🔵 **Assigned** - Carrier selected, awaiting pickup
-🟣 **In Transit** - Load picked up and en route
-🟢 **Delivered** - Successfully completed
-🔴 **Cancelled** - Load cancelled before completion
+**Posted** - New load, accepting bids
+**Bidding** - Active bids from carriers
+**Assigned** - Carrier selected, awaiting pickup
+**Picked Up** - Driver confirmed pickup (A7 orange)
+**In Transit** - Load en route to destination
+**Delivered** - Successfully delivered
+**Closed** - Final stage, paperwork complete
 
-Each status change is logged with timestamps for complete audit trails.`
+Each status change is logged with timestamps for complete audit trails. Drivers can update status to "Picked Up" and "Delivered" from their mobile dashboard.`
       }
     ]
   },
@@ -267,7 +274,8 @@ function Category({ category, expandedSections, toggleSection }) {
     amber: 'bg-amber-500/20 text-amber-400',
     cyan: 'bg-cyan-500/20 text-cyan-400',
     indigo: 'bg-indigo-500/20 text-indigo-400',
-    rose: 'bg-rose-500/20 text-rose-400'
+    rose: 'bg-rose-500/20 text-rose-400',
+    orange: 'bg-[#FA9B00]/20 text-[#FA9B00]'
   }
 
   return (
@@ -297,14 +305,18 @@ function RoleCard({ account, isCurrentRole, onSelect }) {
     emerald: 'border-emerald-500/50 bg-emerald-500/10',
     amber: 'border-amber-500/50 bg-amber-500/10',
     purple: 'border-purple-500/50 bg-purple-500/10',
-    blue: 'border-blue-500/50 bg-blue-500/10'
+    blue: 'border-blue-500/50 bg-blue-500/10',
+    orange: 'border-[#FA9B00]/50 bg-[#FA9B00]/10',
+    cyan: 'border-cyan-500/50 bg-cyan-500/10'
   }
 
   const badgeClasses = {
     emerald: 'bg-emerald-500/20 text-emerald-400',
     amber: 'bg-amber-500/20 text-amber-400',
     purple: 'bg-purple-500/20 text-purple-400',
-    blue: 'bg-blue-500/20 text-blue-400'
+    blue: 'bg-blue-500/20 text-blue-400',
+    orange: 'bg-[#FA9B00]/20 text-[#FA9B00]',
+    cyan: 'bg-cyan-500/20 text-cyan-400'
   }
 
   return (
@@ -376,11 +388,11 @@ export default function GuidePage() {
           <BookOpen className="w-8 h-8 text-accent-primary" />
         </div>
         <h1 className="text-3xl font-bold text-text-primary font-heading mb-2">
-          Platform Guide
+          A7 Transport Guide
         </h1>
         <p className="text-text-secondary max-w-2xl mx-auto">
-          Welcome to the Load Broker Portal demo. Explore this guide to understand all features
-          and capabilities of our freight management platform.
+          Welcome to A7 Transport Portal. Explore this guide to understand all features
+          and capabilities of your freight brokerage platform.
         </p>
       </div>
 
@@ -393,7 +405,7 @@ export default function GuidePage() {
         <p className="text-sm text-text-secondary mb-4">
           Click on a role to instantly switch your view and explore different perspectives.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {demoAccounts.map(account => (
             <RoleCard
               key={account.id}
@@ -449,7 +461,7 @@ export default function GuidePage() {
           This is a demo environment. All data is simulated and resets on page refresh.
         </p>
         <p className="mt-1">
-          Questions? Contact <a href="mailto:support@loadbroker.demo" className="text-accent-primary hover:underline">support@loadbroker.demo</a>
+          Questions? Contact <a href="mailto:ilya@a7transport.com" className="text-accent-primary hover:underline">ilya@a7transport.com</a>
         </p>
       </div>
     </div>
