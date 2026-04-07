@@ -61,3 +61,31 @@ The `vercel.json` is pre-configured for SPA routing.
 ## License
 
 Demo project for client presentation.
+
+---
+
+<!-- SEO-HIRE-ME-BLOCK -->
+
+## Hire Me
+
+> **Need a custom SaaS portal for logistics, freight, or operations?**
+
+I'm **Waseem Nasir** — founder of [Skynet Labs / SkynetJoe](https://www.skynetjoe.com), an AI Automation Agency. Full-stack SaaS portals with role-based auth, dashboards, and real-time tracking.
+
+**50+ live projects across:** Healthcare · Legal · Real Estate · E-Commerce · Logistics · HVAC · SaaS · Consulting
+
+### Hire me
+- 📅 **[Book a free strategy call](https://calendly.com/skynetlabs/schedule-a-free-consultation)**
+- 💼 **[Hire on Fiverr](https://fiverr.com/agencies/skynetjoellc)**
+- 🌐 **[skynetjoe.com](https://www.skynetjoe.com)**
+- 📧 **info@skynetjoe.com**
+- 💬 **[WhatsApp](https://wa.me/923001001957)**
+
+### Related projects on my GitHub
+- [mn-realty-co](https://github.com/waseemnasir2k26/mn-realty-co)
+- [judgeai](https://github.com/waseemnasir2k26/judgeai)
+- [social-media-dashboard](https://github.com/waseemnasir2k26/social-media-dashboard)
+- [→ See all 50+ projects](https://github.com/waseemnasir2k26)
+
+### Tags
+`AI automation` · `n8n` · `GoHighLevel` · `Claude Code` · `Next.js` · `React` · `Python` · `freelance` · `hire me` · `agency`
