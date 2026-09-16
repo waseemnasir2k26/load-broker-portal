@@ -2,6 +2,10 @@
 
 A premium React-based load broker web platform featuring a dark command center aesthetic. Built for freight logistics companies to manage shipments, carriers, and bidding operations.
 
+## Status
+
+Last reviewed: September 2026 · release v2026.09
+
 ## Features
 
 - **Dashboard** - Role-adaptive overview with live stats, activity feed, and mini-map
