@@ -1,0 +1,4 @@
+- load-broker-portal (FreightCommand) is a public React 18 + Vite frontend demo for freight brokerage: load board, bidding, tracking, carrier scores, messaging and four role views, all on mock data.
+- Current state: last functional commit was 2026-04-07 (SEO Hire Me block); no code changes since.
+- Reviewed October 2026: README links checked (Calendly, Fiverr, skynetjoe.com and the three cross-linked GitHub repos returned HTTP 200). The existing Hire Me block was updated to the current Fiverr, Upwork and Calendly links; package.json minor-bumped to 0.2.0.
+- Known gaps: no backend, real auth or persistence (demo only); no LICENSE file; no tests or CI; no live URL stated in the README.
